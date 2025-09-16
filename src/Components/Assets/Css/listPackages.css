@@ -1,0 +1,291 @@
+/* Unique CSS for Pricing Packages Component */
+
+.pricing-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: pricing-spin-animation 1s linear infinite;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-loader-spinner i {
+  font-size: 20px;
+  color: #3498db;
+}
+
+@keyframes pricing-spin-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pricing-package-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.pricing-popular-card {
+  border-color: #259FDA;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,123,255,0.2);
+}
+
+.pricing-popular-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(45deg, #259FDA, #0056b3);
+  color: white;
+  padding: 8px 25px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: rotate(10deg);
+  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+  z-index: 1;
+}
+
+.pricing-amount-display {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.pricing-period-text {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.pricing-feature-checkmark {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pricing-feature-checkmark:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.pricing-check-icon {
+  font-size: 12px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+/* Error Icon Styling */
+.pricing-error-icon {
+  font-size: 4rem;
+  color: #dc3545;
+  animation: pricing-pulse-animation 2s infinite;
+  text-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+}
+
+.pricing-error-icon i {
+  font-size: 4rem;
+}
+
+@keyframes pricing-pulse-animation {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Feature Check Icon Hover Effect */
+.pricing-feature-checkmark:hover .pricing-check-icon {
+  transform: scale(1.2);
+}
+
+/* Popular Badge Icon Effect */
+.pricing-popular-badge::before {
+  content: '\f005'; /* Font Awesome star */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 5px;
+  animation: pricing-twinkle-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pricing-twinkle-animation {
+  0% { opacity: 0.7; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Button Icons */
+.pricing-popular-button .pricing-button-icon,
+.pricing-default-button .pricing-button-icon {
+  transition: transform 0.2s ease;
+}
+
+.pricing-popular-button:hover .pricing-button-icon,
+.pricing-default-button:hover .pricing-button-icon {
+  transform: translateX(2px);
+}
+
+/* Currency Symbol Styling */
+.pricing-currency-symbol {
+  font-size: 1.5rem;
+  vertical-align: top;
+  color: #259FDA;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+/* Additional Icon Utilities */
+.pricing-icon-bounce {
+  animation: pricing-bounce-animation 2s infinite;
+}
+
+@keyframes pricing-bounce-animation {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.pricing-icon-rotate {
+  transition: transform 0.3s ease;
+}
+
+.pricing-icon-rotate:hover {
+  transform: rotate(360deg);
+}
+
+.pricing-popular-button {
+  background: linear-gradient(45deg, #259FDA, #0056b3) !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pricing-popular-button:hover {
+  background: linear-gradient(45deg, #0056b3, #004085) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+  color: white !important;
+}
+
+.pricing-default-button {
+  background: #259FDA !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pricing-default-button:hover {
+  background: #3155b6 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108,117,125,0.4);
+  color: white !important;
+}
+
+/* Additional utility classes for the pricing component */
+.pricing-container-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.pricing-header-title {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-error-container {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-loading-container {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Font Awesome Icon Enhancements */
+.fas {
+  transition: all 0.3s ease;
+}
+
+/* Icon hover effects for feature list icons */
+.pricing-feature-checkmark .fas {
+  font-size: 10px;
+}
+
+/* Header icons */
+.pricing-header-title .fas {
+  color: #259FDA;
+}
+
+/* Button icon spacing and effects */
+.pricing-button-icon {
+  margin-right: 8px;
+}
+
+/* Footer icons */
+.text-muted .fas {
+  color: #6c757d !important;
+  transition: color 0.3s ease;
+}
+
+.text-muted:hover .fas {
+  color: #259FDA !important;
+}
+
+/* Error page icons */
+.pricing-error-icon .fas {
+  color: #dc3545;
+  animation: pricing-pulse-animation 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-amount-display {
+    font-size: 2.5rem;
+  }
+  
+  .pricing-popular-badge {
+    top: -8px;
+    right: -8px;
+    padding: 6px 20px;
+    font-size: 0.8rem;
+  }
+  
+  .pricing-popular-card {
+    transform: scale(1.02);
+  }
+
+  .pricing-header-title .fas {
+    font-size: 1.5rem;
+  }
+
+  .pricing-error-icon i {
+    font-size: 3rem;
+  }
+}
