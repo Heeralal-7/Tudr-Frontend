@@ -413,10 +413,7 @@ const RentalAgreementServices = () => {
                   question: "Is online rental agreement legally valid?", 
                   answer: "Yes, online rental agreements created through our platform are legally valid as they comply with all the necessary legal requirements and include the appropriate stamp duty as per your state regulations." 
                 },
-                { 
-                  question: "Do I need to pay stamp duty?", 
-                  answer: "Yes, stamp duty is mandatory for rental agreements in India. The amount varies by state and is included in our pricing plans." 
-                },
+               
                 { 
                   question: "How does digital signature work?", 
                   answer: "We use secure, government-approved digital signature platforms that provide legally valid e-signatures for your rental agreement." 

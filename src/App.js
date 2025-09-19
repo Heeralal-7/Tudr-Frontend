@@ -23,12 +23,12 @@ import LegalServices from "./Components/legal-services/LegalServices";
 import UserProfile from "./Components/userProfile/UserProfile";
 import ListingPackages from "./Components/prizePackage/ListingPackages";
 import PostProperty from "./Components/post-property/PostProperty";
-function App() {
 
+function App() {
   const location = useLocation();
 
   // Hide Navbar and Footer on login/signup
-  const hideNavAndFooter = location.pathname === '/' || location.pathname === '/login';
+  const hideNavAndFooter = location.pathname === '/login' || location.pathname === '/signup';
 
   return (
     <div>
@@ -36,45 +36,36 @@ function App() {
 
       <Routes>
         {/* Auth Routes */}
-        <Route path="/" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 
-        {/* App Routes */}
+        {/* Home Routes - Fixed to match navbar navigation */}
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        {/* Rent Agreement */}
+        
+        {/* App Routes */}
         <Route path="/rentAgreement" element={<RentAgreement />} />
-        {/* HomeLoan */}
         <Route path="/homeloan" element={<HomeLoan />} />
-          {/* Home Loan Bond */}
         <Route path="/homeloanBond" element={<HomeLoanBond />} />
-        {/* Bond Orientation */}
         <Route path="/bondOrientation" element={<BondOrientation />} />
-        {/* Guidline Seller */}
-        <Route path="/guidlineseller" element={< GuidlineSeller />} />
-        {/* contact us */}
-        <Route path="/contactus" element={< ContactUs/>} />
-        {/* About us */}
-        <Route path="/aboutus" element={< AboutUs/>} />
-        {/* Ai Matches */}
-        <Route path="/Ai-match-property" element={< AiMatchProperty/>} />
-        {/* Packer Mover Services */}
-        <Route path="/packermoverservices" element={< PackerMoverServices/>} />
-        {/* Property Insurence */}
-        <Route path="/propertyInsurence" element={< PropertyInsurence/>} />
-        {/* Property Details */}
-        <Route path="/propertydetails/:id" element={< PropertyDetails/>} />
-        {/* Seller Details */}
-        <Route path="/sellerdetails" element={< SellerDetails/>} />
-        <Route path="/list-package" element={< ListingPackages/>} />
-        {/* Property Search */}
-        <Route path="/propertySearch" element={< PropertySearch/>} />
-        {/* Ligal Services */}
-        <Route path="/legalservices" element={< LegalServices/>} />
-        {/* User Profile */}
+        
+        {/* Fixed case sensitivity issues */}
+        <Route path="/GuidlineSeller" element={<GuidlineSeller />} />
+        <Route path="/guidlineseller" element={<GuidlineSeller />} />
+        <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+        
+        <Route path="/Ai-match-property" element={<AiMatchProperty/>} />
+        <Route path="/packermoverservices" element={<PackerMoverServices/>} />
+        <Route path="/propertyInsurence" element={<PropertyInsurence/>} />
+        <Route path="/propertydetails/:id" element={<PropertyDetails/>} />
+        <Route path="/sellerdetails" element={<SellerDetails/>} />
+        <Route path="/list-package" element={<ListingPackages/>} />
+        <Route path="/propertySearch" element={<PropertySearch/>} />
+        <Route path="/legalservices" element={<LegalServices/>} />
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/post-property" element={<PostProperty />} />
-
-        
       </Routes>
 
       {!hideNavAndFooter && <Footer />}

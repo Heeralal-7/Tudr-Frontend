@@ -57,7 +57,7 @@ const Home = () => {
 
   // Unified filter state structure
   const [filters, setFilters] = useState({
-    Sell: {
+    Buy: {
       city: "",
       propertyType: "",
       minPrice: "",
@@ -185,7 +185,7 @@ const Home = () => {
 
   // Helper function to get budget value from min/max prices (Still needed for search)
   const getBudgetValue = (min, max, category) => {
-    if (category === "Sell") {
+    if (category === "Buy") {
       if (min === 0 && max === 500000) return "under500";
       if (min === 500000 && max === 1000000) return "500to1M";
       if (min === 1000000 && max === 2000000) return "1Mto2M";
@@ -229,7 +229,7 @@ const Home = () => {
 
     // Category-specific parameters
     switch (category) {
-      case "Sell":
+      case "Buy":
         if (categoryFilters.propertyType)
           params.append("propertyType", categoryFilters.propertyType);
         if (categoryFilters.minPrice)
@@ -299,8 +299,8 @@ const Home = () => {
             </select>
           </div>
 
-          {/* Sell Tab */}
-          {category === "Sell" && (
+          {/* Buy Tab */}
+          {category === "Buy" && (
             <>
               <div className="col-md-3">
                 <label className="form-label fw-semibold">Property Type</label>
@@ -759,7 +759,7 @@ const Home = () => {
                   data-bs-target="#buy-tab-pane"
                   type="button"
                 >
-                  Sell
+                  Buy
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -805,7 +805,7 @@ const Home = () => {
                 role="tabpanel"
                 aria-labelledby="buy-tab"
               >
-                {renderFilterForm("Sell")}
+                {renderFilterForm("Buy")}
               </div>
 
               <div
